@@ -1,3 +1,3 @@
 # LeetCode!!! 
 
-Minha lista de resolução para exercicios do (LeetCode)[https://leetcode.com/problemset/all/
+Minha lista de resolução para exercicios do (LeetCode)[https://leetcode.com/problemset/all/]
