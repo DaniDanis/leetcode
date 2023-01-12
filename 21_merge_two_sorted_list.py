@@ -30,7 +30,7 @@ class Solution:
 
 #Não copiar dessa linha para baixo
 # Essa função cria listas node, para facilitar ao realizar tarefas e conseguir realizar os desafios no VSCODE em Python.
-def cria_listas_node(lista_input):
+def _cria_listas_node(lista_input):
     inicio = temp = ListNode
     for x in lista_input:
         temp.next = ListNode(x)
@@ -40,7 +40,7 @@ def cria_listas_node(lista_input):
 
 
 # Essa função pega uma lista node e devolve uma lista comum em python
-def tira_da_lista_node(lista_node):
+def _tira_da_lista_node(lista_node):
     lista = []
     while lista_node is not None:
         lista.append(lista_node.val)
@@ -50,10 +50,10 @@ def tira_da_lista_node(lista_node):
 # Parte que realiza a chamada das funções para validar se esta dando tudo certo
 lista_x = [1,2,4]
 lista_y = [1,3,4]
-lista_1 = cria_listas_node(lista_x)
-lista_2 = cria_listas_node(lista_y)
+lista_1 = _cria_listas_node(lista_x)
+lista_2 = _cria_listas_node(lista_y)
 lista_node = Solution().mergeTwoLists(lista_1=lista_1 , lista_2=lista_2)
-resposta = tira_da_lista_node(lista_node)
+resposta = _tira_da_lista_node(lista_node)
 print(resposta)
 assert resposta == [1,1,2,3,4,4]
 print("Deu tudo certo")
