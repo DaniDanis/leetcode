@@ -6,6 +6,7 @@
 #         self.next = next
 from typing import Optional
 
+# Aqui é definido o que é uma ListNode, para conseguir simular os input/output do Leetcode
 class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
@@ -38,6 +39,7 @@ def cria_listas_node(lista_input):
     return lista_node
 
 
+# Essa função pega uma lista node e devolve uma lista comum em python
 def tira_da_lista_node(lista_node):
     lista = []
     while lista_node is not None:
