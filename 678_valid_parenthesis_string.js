@@ -66,9 +66,7 @@ var checkValidString = function(s) {
         }
     } else if (valida == 0) {
         return true
-    } else if (coringas + coringas_reut > valida) {
-        return true
-    } else {
+    }  else {
         return false
     }
 }
@@ -109,6 +107,20 @@ if (resposta) {
 s = "(())((())()()(*)(*()(())())())()()((()())((()))(*"
 resposta = checkValidString(s)
 if (!resposta) {
+    console.log("Deu certo")}
+    else {
+        console.log("Deu errado")
+    }
+s = "((()*((*)*)((((()(())())((()()()*()())(()((*(()))*"
+resposta = checkValidString(s)
+if (!resposta) {
+    console.log("Deu certo")}
+    else {
+        console.log("Deu errado")
+    }
+s = "((*)"
+resposta = checkValidString(s)
+if (resposta) {
     console.log("Deu certo")}
     else {
         console.log("Deu errado")
