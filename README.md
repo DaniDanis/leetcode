@@ -5,3 +5,7 @@ Minha lista de resolução para exercicios do [LeetCode](https://leetcode.com/pr
 Para rodar qualquer um dos exercicios só troseguir o exemplo abaixo, trocando apenas o nome do arquivo.
 
 `python3 1672_richest_custome_wealth.py` 
+
+Caso seja um arquivo JavaScript
+
+`node nome_do_arquivo.js`
