@@ -29,6 +29,8 @@ var checkValidString = function(s) {
                 return false
             } else if (lista_auxiliar.indexOf('*') < lista_auxiliar.indexOf('(')) {
                 coringas_reut ++
+                coringas --
+                valida ++
                 lista_auxiliar = lista_auxiliar.replace('*','')
                 lista_auxiliar = lista_auxiliar.replace(')','')                
             } else {
@@ -39,13 +41,24 @@ var checkValidString = function(s) {
             coringas ++
         }
     }
-    if (coringas > valida && valida > 0){
+    if (coringas >= valida && valida > 0){
         let tamanho = lista_auxiliar.length - 1
         for (var x = 0; x < tamanho; x++) {
             if (lista_auxiliar.indexOf('*') < lista_auxiliar.indexOf('(')) {
-                lista_auxiliar = lista_auxiliar.replace('*','')
-                coringas--
-            } else {
+                if (coringas > 0) {
+                    if (lista_auxiliar.includes('*')) {
+                        if (coringas_reut > 0) {
+                            lista_auxiliar = lista_auxiliar.replace("(",'')
+                            coringas_reut--
+                        } else {
+                            lista_auxiliar = lista_auxiliar.replace('*','')
+                            coringas--
+                        }
+                    } else if (valida >= 0) {
+                        return false
+                    }
+                }
+            } else if (coringas > 0) {
                 valida --
                 coringas --
                 lista_auxiliar = lista_auxiliar.replace('(','')
@@ -55,6 +68,7 @@ var checkValidString = function(s) {
         for (var y = 0; y < coringas_reut-1; y++) {
             lista_auxiliar = lista_auxiliar.replace('(','*')
         }
+        coringas_reut -= y
         tamanho = lista_auxiliar.length
         for (var z = 0; z < tamanho; z++){
             lista_auxiliar = lista_auxiliar.replace('*', '')
@@ -66,7 +80,9 @@ var checkValidString = function(s) {
         }
     } else if (valida == 0) {
         return true
-    }  else {
+    } else if (coringas >= valida){
+        return true
+    } else {
         return false
     }
 }
@@ -121,6 +137,20 @@ if (!resposta) {
 s = "((*)"
 resposta = checkValidString(s)
 if (resposta) {
+    console.log("Deu certo")}
+    else {
+        console.log("Deu errado")
+    }
+s = "()(())(((((()())(()))))()(*()))()()()()((()(())())*((((())))*())()(()()))*((()(()(()))))(()())(*(*"
+resposta = checkValidString(s)
+if (resposta) {
+    console.log("Deu certo")}
+    else {
+        console.log("Deu errado")
+    }
+s = "((*)(*))((*"
+resposta = checkValidString(s)
+if (!resposta) {
     console.log("Deu certo")}
     else {
         console.log("Deu errado")
