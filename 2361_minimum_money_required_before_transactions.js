@@ -1,6 +1,10 @@
-// https://leetcode.com/problems/permutations/
+// https://leetcode.com/problems/minimum-money-required-before-transactions/submissions/877755964/
 
-// Given an array nums of distinct integers, return all the possible permutations. You can return the answer in any order.
+// You are given a 0-indexed 2D integer array transactions, where transactions[i] = [costi, cashbacki].
+
+// The array describes transactions, where each transaction must be completed exactly once in some order. At any given moment, you have a certain amount of money. In order to complete transaction i, money >= costi must hold true. After performing a transaction, money becomes money - costi + cashbacki.
+
+// Return the minimum amount of money required before any transaction so that all of the transactions can be completed regardless of the order of the transactions.
 
 
 var minimumMoney = function(transactions) {
@@ -36,4 +40,6 @@ var minimumMoney = function(transactions) {
 
 
 transactions = [[7,2],[0,10],[5,0],[4,1],[5,8],[5,9]]
-console.log(minimumMoney(transactions) == 18, minimumMoney(transactions))
+if (minimumMoney(transactions) == 18, minimumMoney(transactions)) {
+    console.log("Deu tudo certo!!!")
+}
